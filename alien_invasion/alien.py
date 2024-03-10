@@ -14,7 +14,7 @@ class Alien(Sprite):
         self.screen = screen
 
         # 加载外新人图片
-        self.image = pygame.image.load('images/alien.bmp')
+        self.image = pygame.image.load('alien_invasion/images/alien.bmp')
         self.rect = self.image.get_rect()
 
         # 初始化外新人位置

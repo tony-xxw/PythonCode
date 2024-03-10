@@ -1,10 +1,14 @@
 import pygame
+from pygame.sprite import Sprite
+import os
 
 
-class Ship():
-    def __init__(self, screen):
+class Ship(Sprite):
+    def __init__(self, ai_settings, screen):
+        super(Ship,self).__init__()
         self.screen = screen
-        self.image = pygame.image.load('images/ship.bmp')
+        self.ai_settings = ai_settings
+        self.image = pygame.image.load('alien_invasion/images/ship.bmp')
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
 
@@ -22,10 +26,13 @@ class Ship():
     def update(self):
         if self.moving_left:
             self.rect.centerx -= self.move_step
+
             if self.rect.centerx < 0:
                 self.rect.centerx = 0
+
         if self.moving_right:
             self.rect.centerx += self.move_step
+
             if self.rect.centerx > self.screen_rect.right:
                 self.rect.centerx = self.screen_rect.right
 

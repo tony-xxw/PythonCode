@@ -6,6 +6,9 @@ class GameStats():
         self.reset_stats()
         self.game_active = False
 
+        self.high_score = 0
+        self.level = 1
+
     def reset_stats(self):
-        self.ships_left = self.ai_settings.ship_limt  # 剩余可用数量
+        self.ships_left = self.ai_settings.ship_limit  # 剩余可用数量
         self.score = 0
